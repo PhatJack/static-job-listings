@@ -1,41 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './reset.css'
-import Photosnap from '../images/photosnap.svg'
+import JobLine from './components/JobLine'
 function App() {
 
+	const [jobList, setJobList] = useState([])
+	const getData = async () => {
+		await fetch('/data.json').then(res => {
+			return res.json();
+		}).then(data => {
+			setJobList(data);
+		})
+	}
+
+	useEffect(() => {
+		getData()
+	}, [])
+
+	console.log(jobList)
 	return (
 		<>
 			<div className="w-full h-full bg-background-color">
-				<div className="w-full h-screen">
+				<div className="w-full h-full">
 					<header className='w-full h-[200px] bg-header bg-cover bg-no-repeat bg-center'>
 					</header>
-					<main className='w-full max-w-[1440px] grid m-auto'>
-						<div className="p-10">
-							<div className="w-full flex flex-col">
-								<section className='bg-white w-full p-10 flex justify-between items-center rounded-[0.25rem] shadow-lg shadow-desatured-dark-cyan/30'>
-									<div className="w-full flex gap-5">
-										<figure>
-											<img src={Photosnap} alt="" className='size-20' />
-										</figure>
-										<div className="flex flex-col gap-2">
-											<article>
-												
-											</article>
-											<h3 className='font-bold text-desatured-dark-cyan text-[1.15rem] mr-2'>Photosnap</h3>
-										</div>
-									</div>
-									<ul className='flex gap-3'>
-										<li className='bg-filter-tablets text-desatured-dark-cyan px-2 pb-1 pt-2 font-medium'>
-											123
-										</li>
-										<li className='bg-filter-tablets text-desatured-dark-cyan px-2 pb-1 pt-2 font-medium'>
-											123
-										</li>
-										<li className='bg-filter-tablets text-desatured-dark-cyan px-2 pb-1 pt-2 font-medium'>
-											123
-										</li>
-									</ul>
-								</section>
+					<main className='w-full max-w-[1440px] m-auto'>
+						<div className="p-10 w-full">
+							<div className="w-full flex flex-col gap-5">
+								{
+									jobList.map((job, index) => (
+										<JobLine job={job} key={index} />
+									))
+								}
 							</div>
 						</div>
 					</main>
