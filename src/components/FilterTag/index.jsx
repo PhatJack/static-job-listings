@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { motion } from 'framer-motion'
-import IconRemove from '../../../images/icon-remove.svg'
+import IconRemove from '/images/icon-remove.svg'
 import { FilterContext } from '../../context/FilterContext'
 
 const Index = ({ item }) => {

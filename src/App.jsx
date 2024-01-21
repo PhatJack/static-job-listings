@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import './reset.css'
 import JobLine from './components/JobLine'
 import { motion, AnimatePresence } from 'framer-motion'
-import IconRemove from '../images/icon-remove.svg'
+import IconRemove from '../public/images/icon-remove.svg'
 import { FilterContext } from './context/FilterContext'
 import FilterTag from './components/FilterTag'
 function App() {

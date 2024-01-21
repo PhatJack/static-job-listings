@@ -22,7 +22,7 @@ const Index = ({ job }) => {
 				)
 			}
 			<div className="w-full flex items-center gap-5 relative lg:border-b-0 border-b-2 lg:pb-0 pb-4">
-				<figure className='size-16 md:size-[90px] md:relative absolute -top-16'>
+				<figure className='size-16 md:size-[90px] md:static absolute -top-16'>
 					<img loading='lazy' src={job.logo} alt="" className='w-full h-full object-contain' />
 				</figure>
 				<div className="w-full">
