@@ -14,7 +14,7 @@ export default {
 				"very-dark-grayish-cyan": "hsl(180, 14%, 20%)"
 			},
 			backgroundImage: {
-				"header" : 'url("./images/bg-header-desktop.svg"),linear-gradient(to right, hsl(180, 29%, 50%),hsl(180, 29%, 50%))'
+				"header" : 'url("/images/bg-header-desktop.svg"),linear-gradient(to right, hsl(180, 29%, 50%),hsl(180, 29%, 50%))'
 			}
 		},
 	},
